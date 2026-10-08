@@ -1,17 +1,49 @@
-*.log
+# LaTeX / latexmk build products -- never commit these
 *.aux
-*.bbl
-*.blg
-*.brf
-*.fls
-*.fdb_latexmk
+*.log
 *.out
 *.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
 *.synctex.gz
+*.synctex(busy)
+*.bbl
+*.blg
 *.bcf
+*.run.xml
+*.nav
+*.snm
+*.vrb
+*.idx
+*.ilg
+*.ind
+*.dvi
+*.xdv
+*.brf
+*.acn
+*.acr
+*.alg
+*.glg
+*.glo
+*.gls
+*.ist
+*.loa
+*.lol
+*.xdy
+build/
 
+# Editor, OS and office leftovers
 .vscode/
+.DS_Store
+Thumbs.db
+*~
+*.swp
+.~lock.*#
+*.pptx#
 
+# Compile the real documents by name: main, and not its artefacts
 main.*
 !main.tex
 !main.pdf

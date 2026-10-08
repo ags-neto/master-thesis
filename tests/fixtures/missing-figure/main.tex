@@ -1,0 +1,7 @@
+% Negative fixture: the figure below is not on disk, so `check.py static`
+% (and a latexmk build of this file) must fail.
+\documentclass{article}
+\usepackage{graphicx}
+\begin{document}
+\includegraphics{images/this-file-does-not-exist.png}
+\end{document}

@@ -65,7 +65,7 @@ sudo apt-get install -y texlive-latex-base texlive-latex-recommended texlive-lat
 Each document is built with `latexmk`, which runs `pdflatex`/`biber`/`bibtex` as many times as the cross-references need. Run it from the document's directory and keep the output out of the repository, so the committed PDFs are never overwritten by a test run:
 
 ```sh
-cd thesis && latexmk -pdf -outdir=/tmp/build/thesis main.tex                 # 114 pages, ~50 s
+cd thesis && latexmk -pdf -outdir=/tmp/build/thesis main.tex                 # 114 pages, ~50 s cold
 cd papers/ibpria2025 && latexmk -pdf -outdir=/tmp/build/ibpria2025 main.tex   # 15 pages
 ```
 
@@ -120,7 +120,7 @@ checks: 13 | failed: 0
 RESULT: PASS
 ```
 
-The five documents then build to **114, 15, 15, 6 and 7 pages** — the same page counts as the committed PDFs — with 0 fatal errors, 0 unresolved references, 0 unresolved citations and 0 missing files each; 6 overfull and 4 underfull boxes in the thesis, 1 overfull in `on-paper-data-aug` and 1 underfull box in `demographic-bias` are the only typesetting warnings. The 70 `\includegraphics` and 307 `\cite` keys of those documents all resolve. A full run takes a few minutes on the Pi 5, the thesis alone about 50 seconds.
+The five documents then build to **114, 15, 15, 6 and 7 pages** — the same page counts as the committed PDFs — with 0 fatal errors, 0 unresolved references, 0 unresolved citations and 0 missing files each; 6 overfull and 4 underfull boxes in the thesis, 1 overfull in `on-paper-data-aug` and 1 underfull box in `demographic-bias` are the only typesetting warnings. The 70 `\includegraphics` and 307 `\cite` keys of those documents all resolve. A full run takes about 70 seconds on the Pi 5 (a cold run on a fresh TeX installation is slower, because the fonts are generated the first time).
 
 ## Structure
 
